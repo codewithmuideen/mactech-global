@@ -1,5 +1,5 @@
 // src/components/Footer.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import images from "../constants/images"; 
 import { FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
@@ -34,6 +34,28 @@ const footerLinkColumns = [
 ];
 
 const Footer = () => {
+  // subscription state
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState([]);
+  const [message, setMessage] = useState(null);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setMessage({ type: "error", text: "❌ Please enter a valid email." });
+      return;
+    }
+
+    if (subscribed.includes(email.toLowerCase())) {
+      setMessage({ type: "warning", text: "⚠️ You have already subscribed." });
+    } else {
+      setSubscribed([...subscribed, email.toLowerCase()]);
+      setMessage({ type: "success", text: "✅ You have subscribed." });
+      setEmail("");
+    }
+  };
+
   return (
     <footer className="bg-gradient-to-br from-catalina-blue via-onyx to-black text-white relative overflow-hidden">
       {/* Decorative background bubbles */}
@@ -75,11 +97,17 @@ const Footer = () => {
               Monthly stories and insights from leading founders, investors, and
               our team.
             </p>
-            <form action="subscribe.php" method="POST" className="flex flex-col sm:flex-row gap-3 sm:items-center">
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col sm:flex-row gap-3 sm:items-center"
+            >
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
-                className="flex-1 px-4 py-3 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-mountain-meadow" required
+                className="flex-1 px-4 py-3 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-mountain-meadow"
+                required
               />
               <button
                 type="submit"
@@ -88,6 +116,21 @@ const Footer = () => {
                 Sign Up
               </button>
             </form>
+
+            {/* Feedback message */}
+            {message && (
+              <p
+                className={`mt-3 ${
+                  message.type === "success"
+                    ? "text-green-400"
+                    : message.type === "warning"
+                    ? "text-yellow-400"
+                    : "text-red-400"
+                }`}
+              >
+                {message.text}
+              </p>
+            )}
           </div>
         </div>
 
