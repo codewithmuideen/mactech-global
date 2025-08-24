@@ -66,13 +66,21 @@ const HomePage = () => {
             transition={{ delay: 1, type: "spring", stiffness: 200 }}
           >
             <Link
-              to="/portfolio"
-              className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold px-10 py-4 rounded-full 
-                         inline-block transform hover:scale-110 transition-transform duration-300 
-                         shadow-lg hover:shadow-2xl"
-            >
-              Explore Our Portfolio
-            </Link>
+  to="/portfolio"
+  className="
+    bg-gradient-to-r from-blue-500 to-purple-500 
+    text-white font-bold 
+    px-6 py-3 sm:px-10 sm:py-4 
+    rounded-full inline-block 
+    text-sm sm:text-base lg:text-lg   /* Responsive font sizes */
+    transform hover:scale-110 
+    transition-transform duration-300 
+    shadow-lg hover:shadow-2xl
+  "
+>
+  Explore Our Portfolio
+</Link>
+
           </motion.div>
         </div>
       </motion.div>

@@ -44,7 +44,7 @@ const CTASection = () => {
                        hover:border-cyan-400 hover:text-cyan-300 transition-all duration-300 group"
           >
             <HiUserGroup size={22} />
-            Become a Corporate Partner
+            Join Us
             <span className="absolute left-0 -bottom-1 w-0 group-hover:w-full h-0.5 bg-cyan-400 transition-all duration-300"></span>
           </Link>
         </div>
