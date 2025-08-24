@@ -1,41 +1,58 @@
-// tailwind.config.js  (or tailwind.config.cjs / .mjs)
-export default {
+// tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
-      /*  ↓ FONT FAMILY  ↓  */
-      fontFamily: {
-    montserrat: ['Montserrat', 'sans-serif'],
-},
-      /*  ↓ PALETTE  ↓  */
       colors: {
-        'sky-blue':   '#0099ff',
-        'rich-blue':  '#0b5aad',
-        'cloud-grey': '#f2f4f7',
-        'rose-coral': '#ff7b89',
-      },
-
-      /*  ↓ ANIMATIONS  ↓  */
-      animation: {
-        glow:  'glow 1.5s ease-in-out infinite',
-        blink: 'blink 1.2s steps(2, start) infinite',
-        pulse: 'pulse 2s infinite',
-        bounce:'bounce 1.5s infinite',
+        'catalina-blue': '#064871',
+        'mountain-meadow': '#27845b',
+        'onyx': '#424242',
       },
       keyframes: {
-        glow: {
-          '0%,100%': { boxShadow: '0 0 10px #0099ff, 0 0 20px #0099ff', opacity: 1 },
-          '50%':     { boxShadow: '0 0 20px #0b5aad, 0 0 40px #0b5aad', opacity: 0.7 },
+        // Fade effects
+        'fade-in-down': {
+          '0%': { opacity: '0', transform: 'translateY(-20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        blink: {
-          '0%,100%': { opacity: 1 },
-          '50%':     { opacity: 0 },
+        'fade-in-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+
+        // Partner logos horizontal scroll
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+
+        // Floating blobs
+        blob: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        },
+
+        // Slow spin for globe
+        'spin-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+
+      animation: {
+        'fade-in-down': 'fade-in-down 0.8s ease-out forwards',
+        'fade-in-up': 'fade-in-up 0.8s ease-out 0.2s forwards',
+        'scroll': 'scroll 30s linear infinite',
+        'blob': 'blob 7s infinite',
+        'blob-slow': 'blob 10s infinite',
+        'spin-slow': 'spin-slow 20s linear infinite',
       },
     },
   },
   plugins: [],
-};
+}

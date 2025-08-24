@@ -2,22 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.PhoneInputInput {
-  flex: 1;
-  min-width: 0;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding-left: 0.75rem; 
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
-.PhoneInputCountry {
-  margin-right: 0.5rem;
-}
-
-@media (max-width: 1023px) {
- 
-  img[alt="Global Career Advisors Logo"] {
-    height: 2.75rem; 
-  }
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
 }
