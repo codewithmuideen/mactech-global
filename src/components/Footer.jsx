@@ -75,11 +75,11 @@ const Footer = () => {
               Monthly stories and insights from leading founders, investors, and
               our team.
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 sm:items-center">
+            <form action="subscribe.php" method="POST" className="flex flex-col sm:flex-row gap-3 sm:items-center">
               <input
                 type="email"
                 placeholder="Your email"
-                className="flex-1 px-4 py-3 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-mountain-meadow"
+                className="flex-1 px-4 py-3 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-mountain-meadow" required
               />
               <button
                 type="submit"

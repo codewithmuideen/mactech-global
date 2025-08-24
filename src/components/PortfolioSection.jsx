@@ -10,7 +10,7 @@ import images from "../constants/images";
 const portfolioData = [
   {
     name: "Aether Financial",
-    stage: "Series B",
+    stage: "",
     description:
       "AI-powered platform democratizing algorithmic trading and financial instruments.",
     category: "Fintech",
@@ -30,7 +30,7 @@ const portfolioData = [
   },
   {
     name: "Nova Health",
-    stage: "Series A",
+    stage: "",
     description:
       "Preventative healthcare with genomics & wearables for personalized wellness.",
     category: "Health",
@@ -50,7 +50,7 @@ const portfolioData = [
   },
   {
     name: "LogiChain",
-    stage: "Series B",
+    stage: "",
     description:
       "Blockchain-powered supply chain management for global logistics.",
     category: "Supply Chain",
@@ -127,7 +127,7 @@ const PortfolioSection = () => {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-100 h-100 object-contain rounded-xl group-hover:scale-110 transition-transform duration-700"
+                        className="w-100 h-100 object-contain transition-transform duration-700"
                       />
                     </div>
 
