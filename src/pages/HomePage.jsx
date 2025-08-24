@@ -8,6 +8,8 @@ import OfferingsSection from "../components/OfferingsSection";
 import PlatformSection from "../components/PlatformSection";
 import PortfolioSection from "../components/PortfolioSection";
 import CTASection from "../components/CTASection";
+import ServicesVentures from "../components/ServicesVentures";
+import AboutSections from "../components/AboutSections";
 
 const HomePage = () => {
   return (
@@ -88,6 +90,8 @@ const HomePage = () => {
       {/* 🔹 Scroll Down Arrow */}
      
     </section>
+    <AboutSections />
+    <ServicesVentures />
     <PartnersSection />
     <OfferingsSection />
     <PlatformSection />
