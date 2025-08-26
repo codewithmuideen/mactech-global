@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 import bgVideo from "../assets/video.mp4";
 import PartnersSection from "../components/PartnersSection";
 import OfferingsSection from "../components/OfferingsSection";
-import PlatformSection from "../components/PlatformSection";
+// import PlatformSection from "../components/PlatformSection";
 import PortfolioSection from "../components/PortfolioSection";
 import CTASection from "../components/CTASection";
 import ServicesVentures from "../components/ServicesVentures";
 import AboutSections from "../components/AboutSections";
+import Platform from "../components/Platform";
 
 const HomePage = () => {
   return (
@@ -94,8 +95,9 @@ const HomePage = () => {
     <ServicesVentures />
     <PartnersSection />
     <OfferingsSection />
-    <PlatformSection />
+    {/* <PlatformSection /> */}
     <PortfolioSection />
+    <Platform />
     <CTASection />
     </>
   );
