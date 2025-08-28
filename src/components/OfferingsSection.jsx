@@ -14,13 +14,14 @@ const offeringsData = [
     buttonText: "Build with us",
     path: "/venture-studio",
   },
-  {
-    title: "Accelerator",
-    description:
-      "Raise capital and supercharge your growth through our world-class pre-seed and seed stage investment programs.",
-    buttonText: "Explore programs",
-    path: "/accelerator",
-  },
+{
+  title: "Volunteer With Us",
+  description:
+    "Make a difference by contributing your time and skills. Join our volunteer community and help us create lasting impact together.",
+  buttonText: "Join as Volunteer",
+  path: "/careers",
+}
+
 ];
 
 const OfferingsSection = () => {

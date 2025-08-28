@@ -39,7 +39,7 @@ const CTASection = () => {
 
           {/* Secondary Action */}
           <Link
-            to="/company/partners"
+            to="/careers"
             className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-white border-2 border-white/40
                        hover:border-cyan-400 hover:text-cyan-300 transition-all duration-300 group"
           >
