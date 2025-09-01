@@ -21,7 +21,6 @@ const offeringsData = [
   buttonText: "Join as Volunteer",
   path: "/careers",
 }
-
 ];
 
 const OfferingsSection = () => {
